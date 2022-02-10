@@ -62,6 +62,22 @@ export default class KanbanAPI {
              // Move item into it's new column and position
              targetColumn.items.splice(newProps.position, 0, item);
          }
+
+         save(data);
+    }
+
+    static deleteItem(itemId) {
+        const data = read();
+
+        for (const column of data) {
+            const item = column.items.find(item => item.id == itemID);
+
+            if (item) {
+                column.item.splice(column.items.indexOf(item), 1);
+            }
+        }
+
+        save(data);
     }
 }
 
