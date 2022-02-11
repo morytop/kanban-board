@@ -70,7 +70,7 @@ export default class KanbanAPI {
         const data = read();
 
         for (const column of data) {
-            const item = column.items.find(item => item.id == itemID);
+            const item = column.items.find(item => item.id == itemId);
 
             if (item) {
                 column.item.splice(column.items.indexOf(item), 1);
